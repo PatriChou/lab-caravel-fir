@@ -13,8 +13,8 @@
  這部分有三個part:
 
   WB_DECODER(user_proj_example.counter.v)  
-    由於EXMEM、WBAXI的地址不同，而CPU只有一組WBS能夠輸出，因此為了能夠去區分這兩組的訊號，  
-    WB_DECODER會去將CPU的訊號依照傳送的地址的不同，將訊號分別傳送到指定的元件去。  
+     由於EXMEM、WBAXI的地址不同，而CPU只有一組WBS能夠輸出，因此為了能夠去區分這兩組的訊號，  
+     WB_DECODER會去將CPU的訊號依照傳送的地址的不同，將訊號分別傳送到指定的元件去。  
       
   EXMEM(BASE ADDR:38_000_000)  
     是用來儲存Firmwave Code的Assembly Code。CPU會先將Spiflash的執行檔讀取到exmem中，之後再從exmem讀取出來執行。  
