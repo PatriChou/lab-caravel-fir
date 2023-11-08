@@ -165,10 +165,10 @@ module counter_la_fir_tb;
 	integer 	test_loop, test_len;
 	integer		start_time, end_time;
 	integer  	duration[0:2];
-
+	integer  	error[0:2];
+				
 	reg signed [15:0] 	golden_list	[0:`TEST_LENGTH*3-1];
 	reg signed [15:0] 	out_data 	[0:`TEST_LENGTH-1];
-	reg	[2:0]				error;
 
 	// GET GOLDEN DATA
     initial begin
