@@ -58,8 +58,7 @@ always@(*) begin
         IDLE_ST: begin
             next_state = (!wbs_cyc_i)? IDLE_ST:
                          (addr[7:0] >= 8'h80)? (wbs_we_i)? STRM_XN_ST : STRM_YN_ST :
-                                               (wbs_we_i)? (awready && wready)? LITE_WR_ST:IDLE_ST :
-                                                           (arready)?           LITE_RD_ST:IDLE_ST ;
+                                               (wbs_we_i)? LITE_WR_ST : (arready)? LITE_RD_ST:IDLE_ST ;
         end
         LITE_WR_ST: begin
             next_state = (awready && wready)? ACK_ST:
